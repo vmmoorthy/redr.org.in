@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+
+    <meta http-equiv="refresh" content="5;url=https://redrindia.org/">
+
+    <script>
+        // Captures the path, query strings, and hashes (e.g., /about?page=2#contact)
+        const currentPath = window.location.pathname + window.location.search + window.location.hash;
+
+        // Constructs the new destination URL
+        const destination = "https://redrindia.org" + currentPath;
+
+        // Executes the redirect immediately
+        window.location.replace(destination);
+    </script>
+</head>
+
+<body>
+    <p>If you are not redirected automatically, please <a id="redirect-link" href="https://redrindia.org/">click
+            here</a>.</p>
+
+    <script>
+        // Update the fallback link dynamically for JavaScript users just in case
+        document.getElementById('redirect-link').href = "https://redrindia.org" + currentPath;
+    </script>
+</body>
+
+</html>
